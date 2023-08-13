@@ -26,9 +26,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./guestbook-go/Dockerfile 
+        file: ./guestbook-go/Dockerfile  # Specify the path to your Dockerfile
         push: true
-        tags: ${{ github.repository }}:$GITHUB_SHA
+        tags: ${{ github.repository }}:latest
       
-      env:
-        GITHUB_SHA: ${{ github.sha }}  
